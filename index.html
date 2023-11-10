@@ -1,74 +1,117 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="index.css">
-    <script src="index.js"></script>
-    <title>creat</title>
-</head>
-<body>
+<!doctype html>
+<html>
+  <head>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
+   
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="style.css">
+
+
+   <title>Forme de validation </title>
+  </head>
+
   
-  <nav>
-    <a href="PAW-PG.html">   <p class="text-white font-weight-bold">Back home</p></a>   
-  </nav>
-         <!--formulaire-->
-         <div class="container ">
-            <form >
-              <label for="exampleFormControlFile1" class="text-danger ">Add a photo</label>
-                <input type="file" class="form-control-file " id="exampleFormControlFile1" name="pho">
-      
-         <div class="form-group">
-           <label for="formGroupExampleInput" class="text-danger ">Title</label>
-           <input type="text" class="form-control" id="formGroupExampleInput" name="title" >
-         </div>
-         <div class="form-group">
-           <label for="exampleFormControlTextarea1" class="text-danger ">Ingredients</label>
-           <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-         </div>
-         <label for="formGroupExampleInput" class="text-danger ">Meal</label> 
-         <div>
+  <body>
+  <section class="bg">
+  	<div class="container">
+  		<div class="row d-flex justify-content-center">
+  			<div class="col-md-4">
+  				<div class="forme-wr">
+  					<div class="forme-heading">
+  						<h1>Log in </h1>
+  						<p>Entrer vos informations </p>
+  					</div>
+  					<form name="regForm" id="regForm">
+  						<div class="form-group">
+  							<label>Name: </label>
+  							<input type="text" class="form-control" id="name"name="" placeholder="Name">
+  							<p id="p1"></p>
+  						</div>
+  						<div class="form-group">
+  							<label>Email: </label>
+  							<input type="email" class="form-control" id="email"name="" placeholder="Email">
+  							<p id="p2"></p>
+  						</div>
+  						<div class="form-group">
+  							<label>Password: </label>
+  							<input type="password" class="form-control" id="password"name="" placeholder="Password">
+  							<p id="p3"></p>
+  						</div>
+  						<div class="form-group">
+  					
+  							<input type="submit" class="btn btn-primary btn-block" id="submit">
+  							
+  						</div>
+  						
+  					</form>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+  </section>
 
-         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-          <label class="form-check-label" for="inlineRadio1">Breakfast</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-          <label class="form-check-label" for="inlineRadio2">Lunch</label>
-        </div>
-        
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-          <label class="form-check-label" for="inlineRadio2">Dinner</label>
-        </div>
-      </div>
-       <div class="form-group">
-         <label for="exampleFormControlTextarea1"class="text-danger ">Preparation</label>
-         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-       </div>
-       <button type="submit" class="btn btn-danger font-weight-bold">Create</button>
-     </form>
-   </div>
-   
-   
+	
+	
+
+    <!--  JavaScript -->
+    <!-- jQuery,  Popper.js,Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  
+  <script>
+  	$(document).ready(function(){
+  		$("#submit").click(function(){
+  			var name = $("#name").val();
+  			var email = $("#email").val();
+  			var pass = $("#password").val();
+
+  			if(name.length == "")
+  			{
+  				$("#p1").text("Please enter your name");
+  				$("#name").focus();
+  				return false;
+  			}
+
+  			else if(email.length == ""){
+  				$("#p2").text("Please enter your email address");
+  				$("#email").focus();
+  				return false;
+  			}
 
 
+  			else if(pass.length == ""){
+  				$("#p3").text("Please enter your password");
+  				$("#password").focus();
+  				return false;
+  			}
+
+  			else{
+  				var con = confirm("Are you Done?");
+  				if(con == true)
+  				{
+  					alert("Welcome to our Website");
+  					return true;
+  				}
+  				else{
+  					return false;
+  				}
+  			}
+  		});
+  	});
 
 
-
-
-
-
-
-
-
-
-
-
-    <script src="js/popper.min.js"></script>
-<script src="js/jquery-3.7.1.min.js"></script>
-<script src="js/bootstrap.js"></script>
-</body>
+  </script>
+  
+  
+  
+  </body>
 </html>
